@@ -1,0 +1,200 @@
+/* The statement, as Ilse Marten would set it (design/PERSONA.md, design/PLAN.md).
+   White paper, black ink, one family of type, no boxes. One colour with one meaning: what we ask be left out. */
+
+@font-face { font-family: "STIX Two Text"; src: url("fonts/stix-two-text-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "STIX Two Text"; src: url("fonts/stix-two-text-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "STIX Two Text"; src: url("fonts/stix-two-text-600-normal.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "STIX Two Text"; src: url("fonts/stix-two-text-700-normal.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+:root {
+	--paper: #ffffff;
+	--ink: #000000;
+	--second: #555555;
+	--pencil: #2a52a6;
+	--measure: 37.5rem;
+	--notes: 15rem;
+	--gap: 3.5rem;
+	--left: clamp(1.25rem, calc((100vw - 56rem) * 0.42), 34rem);
+	--note-size: 0.9375rem;
+	--line: 1.5px;
+}
+
+* { box-sizing: border-box; }
+/* On a screen larger than a laptop's the whole page grows with it, so the first screen keeps its proportions and
+   does not sit small in a corner. It grows with the width, is held back by the height, and starts from the reader's
+   own text size. */
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 2rem; font-size: clamp(1rem, min(0.714vw + 0.356rem, 1.78vh), 2.125rem); }
+body {
+	margin: 0;
+	background: var(--paper);
+	color: var(--ink);
+	font-family: "STIX Two Text", "STIX Two", Cambria, Georgia, serif;
+	font-size: 1.25rem;
+	line-height: 1.6;
+	font-kerning: normal;
+	text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+sup { font-size: 0.68em; line-height: 0; }
+strong { font-weight: 600; }
+
+/* the page: a text column and, in the wide outer margin, the notes */
+.wrap { margin-left: var(--left); margin-right: 1.25rem; max-width: calc(var(--measure) + var(--gap) + var(--notes)); }
+.row { display: grid; grid-template-columns: minmax(0, var(--measure)) minmax(0, var(--notes)); column-gap: var(--gap); align-items: start; }
+.text > p { margin: 0 0 1.05em; }
+.text > p:last-child { margin-bottom: 0; }
+.row + .row { margin-top: 1.05em; }
+
+.src { font-size: var(--note-size); line-height: 1.45; color: var(--second); padding-top: 0.36rem; overflow-wrap: break-word; }
+.src p { margin: 0 0 0.75em; }
+.src p:last-child { margin-bottom: 0; }
+
+/* the first screen says one thing */
+/* the words sit a little above the middle of the first screen, with the cube beside them */
+.head { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-top: 3rem; padding-bottom: 9.5rem; }
+.dateline { font-size: var(--note-size); line-height: 1.45; color: var(--second); margin: 0 0 2.4rem; }
+h1 { font-weight: 400; font-size: clamp(2.7rem, 6.6vw, 5.75rem); line-height: 1.02; letter-spacing: -0.014em; margin: 0 0 2.6rem -0.04em; max-width: 11.5em; text-wrap: balance; }
+.lede { font-size: 1.5rem; line-height: 1.42; margin: 0; }
+
+/* One stroke behind the first screen: the six-dimensional cube, large in the lower right corner and running off two
+   edges. The page's one colour, thinned. It does not move. */
+.stage { position: relative; overflow: hidden; }
+.stage > .stroke { position: absolute; z-index: 0; pointer-events: none; }
+.stage > header { position: relative; z-index: 1; }
+/* the cube runs off the right edge only; its foot stays inside the first screen, so nothing cuts it when you scroll */
+.cube { --cube: min(42vw, 54rem, 68svh); width: var(--cube); right: calc(var(--cube) * -0.3); bottom: calc(var(--cube) * 0.045); }
+.cube line { stroke: var(--pencil); stroke-width: 0.55; opacity: 0.3; vector-effect: non-scaling-stroke; stroke-width: 1.1px; }
+
+/* The opening sentence, a result to a line. Where there is a left margin the dates hang in it, and the delete sign
+   sits there on the one line that has no date: a proofreader's margin. */
+.opening { padding-top: 1rem; }
+.ledger { margin: 0 0 0.8rem; font-size: clamp(1.3rem, 2.08vw, 1.875rem); line-height: 1.32; letter-spacing: -0.006em; }
+.ledger p { margin: 0; }
+.ledger .item { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 1.5rem; align-items: baseline; }
+.ledger .when { font-size: var(--note-size); color: var(--second); letter-spacing: 0; white-space: nowrap; }
+del.pencil { text-decoration: line-through; text-decoration-color: var(--pencil); text-decoration-thickness: 3px; }
+.dele { width: 2.8rem; height: 2.07rem; overflow: visible; vertical-align: -0.55rem; }
+.dele path { fill: none; stroke: var(--pencil); stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
+.markkey { font-size: var(--note-size); line-height: 1.45; color: var(--second); margin: 0 0 2.6rem; }
+.status-rest { font-size: var(--note-size); line-height: 1.45; color: var(--second); }
+@media (min-width: 76rem) {
+	.ledger .item { display: block; position: relative; }
+	.ledger .when { position: absolute; right: calc(100% + 1.4rem); top: 0.62em; line-height: 1; }
+	.ledger .when.mark { top: -0.02em; }
+}
+
+main { padding-bottom: 1rem; }
+section + section { margin-top: 4.75rem; }
+h2 { font-weight: 600; font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.006em; margin: 0 0 1.1rem; max-width: var(--measure); }
+.open, .turn { font-size: 1.5rem; line-height: 1.42; }
+
+/* a list hangs its marks outside the measure, so the left edge of the text stays straight */
+.worst { list-style: none; margin: 0 0 1.05em; padding: 0; }
+.worst li { position: relative; margin: 0 0 0.4em; }
+.worst li::before { content: "\2013"; position: absolute; left: -1.15em; }
+
+/* the questions are someone else's voice, so they are italic */
+.q { font-style: italic; font-weight: 400; font-size: 1.5rem; line-height: 1.25; margin: 0 0 0.55rem; text-wrap: balance; }
+.replies .row + .row { margin-top: 2.5rem; }
+
+/* figures: lines and labels, numbered */
+figure { margin: 2.8rem 0 3rem; }
+figcaption { font-size: var(--note-size); line-height: 1.45; color: var(--second); margin-top: 1.4rem; max-width: var(--measure); }
+
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); counter-reset: step; }
+.step { position: relative; counter-increment: step; padding: 3.2rem 1.7rem 0 0; background: linear-gradient(var(--ink), var(--ink)) 0 1.8rem / 100% var(--line) no-repeat; }
+.step:last-child { background: none; padding-right: 0; }
+.step::before { content: counter(step); position: absolute; left: 0; top: 0; font-size: var(--note-size); line-height: 1; color: var(--second); }
+.step::after { content: ""; position: absolute; left: 0; top: calc(1.8rem + var(--line) / 2); width: 0.56rem; height: 0.56rem; border-radius: 50%; background: var(--ink); transform: translateY(-50%); }
+.step h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.2; margin: 0 0 0.45rem; }
+.step p { position: relative; font-size: var(--note-size); line-height: 1.45; margin: 0; }
+
+/* Figure 2: the blue pencil. The only colour on the page, and it means one thing. */
+.cut del { text-decoration: none; }
+.strike { position: relative; display: inline-block; }
+.strike::after { content: ""; position: absolute; left: -0.4em; right: -0.4em; top: 54%; height: 2.5px; border-radius: 2px; background: var(--pencil); transform: rotate(-1.3deg); }
+.slash { position: absolute; left: -0.5em; top: -0.25em; right: -0.2em; bottom: -0.2em; pointer-events: none; }
+.slash-line { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.slash-line line, .loop path { fill: none; stroke: var(--pencil); stroke-width: 2.5px; stroke-linecap: round; stroke-linejoin: round; }
+.loop { --w: 4.4rem; position: absolute; left: calc(100% - var(--w) * 3 / 70); top: calc(100% - var(--w) * 30 / 70); width: var(--w); height: calc(var(--w) * 48 / 70); overflow: visible; }
+.loop path { stroke-width: 2.5; }
+
+/* the ask, displayed like an equation: the one centred line on the page */
+.display { position: relative; max-width: var(--measure); margin: 2.6rem 0 2.8rem; padding: 0 3.2rem; text-align: center; font-size: clamp(1.75rem, 3.4vw, 2.5rem); line-height: 1.16; letter-spacing: -0.008em; text-wrap: balance; }
+.eqno { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 1.25rem; letter-spacing: 0; }
+
+/* Figure 3: how long each secret lasted */
+.timeline { --y0: 1968; --y1: 1992; }
+.axis { position: relative; height: 2rem; border-bottom: var(--line) solid var(--ink); }
+.axis span { position: absolute; left: calc((var(--at) - var(--y0)) / (var(--y1) - var(--y0)) * 100%); bottom: 0.5rem; transform: translateX(-50%); font-size: var(--note-size); line-height: 1; color: var(--second); font-variant-numeric: lining-nums tabular-nums; }
+.axis span::after { content: ""; position: absolute; left: 50%; bottom: -0.5rem; height: 0.34rem; border-left: var(--line) solid var(--ink); }
+.bar { margin-top: 1.35rem; line-height: 1.3; }
+.bar .what { font-size: 1.0625rem; }
+.bar .gap { font-size: var(--note-size); color: var(--second); margin-left: 0.7em; white-space: nowrap; }
+.bar::after { content: ""; display: block; margin-top: 0.45rem; margin-left: calc((var(--from) - var(--y0)) / (var(--y1) - var(--y0)) * 100%); width: calc((var(--to) - var(--from)) / (var(--y1) - var(--y0)) * 100%); height: 0.56rem; border: solid var(--ink); border-width: 0 var(--line); background: linear-gradient(var(--ink), var(--ink)) center / 100% 2px no-repeat; }
+
+/* signed */
+.digest { font-size: var(--note-size); line-height: 1.45; color: var(--second); }
+#digest { display: block; margin-top: 0.3em; color: var(--ink); font-variant-numeric: lining-nums tabular-nums; letter-spacing: 0.03em; overflow-wrap: anywhere; }
+
+/* sources */
+.sources { margin-top: 6.5rem; padding-bottom: 6rem; }
+.sources ol { margin: 0; padding: 0 0 0 1.7em; font-size: var(--note-size); line-height: 1.45; color: var(--second); columns: 2; column-gap: var(--gap); overflow-wrap: anywhere; }
+.sources li { break-inside: avoid; margin: 0 0 0.6em; padding-left: 0.2em; }
+.sources li:target { color: var(--ink); }
+.sources li:target::marker { font-weight: 700; }
+.colophon { font-size: var(--note-size); line-height: 1.45; color: var(--second); max-width: var(--measure); margin: 2.6rem 0 0; }
+
+/* when the outer margin is too narrow for notes, each note falls under the paragraph it supports */
+@media (max-width: 68rem) {
+	:root { --left: clamp(1.25rem, 9vw, 7rem); }
+	.row { grid-template-columns: minmax(0, var(--measure)); }
+	.src { padding: 0 0 0 1.5rem; margin-top: 0.9rem; max-width: var(--measure); }
+	.src:empty { display: none; }
+	/* one column: the cube sits under the lede with room of its own, never behind the words */
+	.cube { --cube: min(27rem, 78vw); right: calc(var(--cube) * -0.22); bottom: 1.5rem; }
+	.head { min-height: 0; display: block; padding-top: clamp(2.5rem, 9vh, 6rem); padding-bottom: calc(min(27rem, 78vw) + 3rem); }
+	.sources ol { columns: 1; max-width: var(--measure); }
+}
+
+/* on a phone the four steps run down the page */
+@media (max-width: 46rem) {
+	body { font-size: 1.1875rem; }
+	.lede, .open, .turn, .q { font-size: 1.3125rem; }
+	h2 { font-size: 1.5rem; }
+	section + section { margin-top: 3.75rem; }
+	.worst li::before { position: static; margin-right: 0.45em; }
+	.steps { grid-template-columns: minmax(0, 1fr); }
+	.step { padding: 0 0 1.7rem 2rem; background: linear-gradient(var(--ink), var(--ink)) 0.2rem 0.5rem / var(--line) 100% no-repeat; }
+	.step:last-child { padding-bottom: 0; padding-right: 0; }
+	.step::before { position: static; display: block; margin-bottom: 0.35rem; }
+	.step::after { left: calc(0.2rem + var(--line) / 2); top: 0.45rem; transform: translate(-50%, -50%); }
+	.display { padding: 0 2.6rem 0 0; text-align: left; font-size: 1.75rem; }
+	.ledger .c { padding-left: 1em; text-indent: -1em; }
+	.cube { --cube: 21rem; right: -5.5rem; bottom: 1.5rem; }
+	.head { padding-bottom: 24rem; }
+	.slash { right: 4.6rem; }
+	.cut { padding-bottom: 2.6rem; }
+}
+
+@media print {
+	.wrap { margin-left: 0; margin-right: 0; }
+	.head { min-height: 0; padding-top: 0; padding-bottom: 2rem; }
+	body { font-size: 11pt; }
+}
+
+/* 25 November: his line under the headline is short and stands larger; the opening's notes sit under the list */
+.head .lede { font-size: 2.125rem; line-height: 1.2; letter-spacing: -0.008em; }
+.opening .notes-under { columns: 2; column-gap: var(--gap); padding: 0; margin-top: 1.6rem; max-width: calc(var(--measure) + var(--gap) + var(--notes)); }
+.opening .notes-under p { break-inside: avoid; }
+@media (max-width: 46rem) { .head .lede { font-size: 1.625rem; } .opening .notes-under { columns: 1; } }
+
+/* 25 November, his word: read it like a 1AC. Whoever reads only the bold gets the case; the impact list hits hardest. */
+strong { font-weight: 700; }
+.worst { margin: 1.4rem 0 1.6rem; }
+.worst li { font-size: 1.5rem; line-height: 1.28; margin: 0 0 0.6em; letter-spacing: -0.004em; }
+.worst li::before { content: none; }
+@media (max-width: 46rem) { .worst li { font-size: 1.3125rem; } }

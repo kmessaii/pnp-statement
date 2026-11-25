@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI labs should stop working on P = NP (draft)</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Since 25 November 2026 this file is the source of the words. -->
+
+<div id="statement">
+
+<div class="stage"><svg class="stroke cube" viewBox="-190 -190 380 380" aria-hidden="true"><line x1="-50.0" y1="-186.6" x2="50.0" y2="-186.6"/><line x1="-50.0" y1="-186.6" x2="36.6" y2="-136.6"/><line x1="-50.0" y1="-186.6" x2="-0.0" y2="-100.0"/><line x1="-50.0" y1="-186.6" x2="-50.0" y2="-86.6"/><line x1="-50.0" y1="-186.6" x2="-100.0" y2="-100.0"/><line x1="-50.0" y1="-186.6" x2="-136.6" y2="-136.6"/><line x1="50.0" y1="-186.6" x2="136.6" y2="-136.6"/><line x1="50.0" y1="-186.6" x2="100.0" y2="-100.0"/><line x1="50.0" y1="-186.6" x2="50.0" y2="-86.6"/><line x1="50.0" y1="-186.6" x2="0.0" y2="-100.0"/><line x1="50.0" y1="-186.6" x2="-36.6" y2="-136.6"/><line x1="36.6" y1="-136.6" x2="136.6" y2="-136.6"/><line x1="36.6" y1="-136.6" x2="86.6" y2="-50.0"/><line x1="36.6" y1="-136.6" x2="36.6" y2="-36.6"/><line x1="36.6" y1="-136.6" x2="-13.4" y2="-50.0"/><line x1="36.6" y1="-136.6" x2="-50.0" y2="-86.6"/><line x1="136.6" y1="-136.6" x2="186.6" y2="-50.0"/><line x1="136.6" y1="-136.6" x2="136.6" y2="-36.6"/><line x1="136.6" y1="-136.6" x2="86.6" y2="-50.0"/><line x1="136.6" y1="-136.6" x2="50.0" y2="-86.6"/><line x1="-0.0" y1="-100.0" x2="100.0" y2="-100.0"/><line x1="-0.0" y1="-100.0" x2="86.6" y2="-50.0"/><line x1="-0.0" y1="-100.0" x2="-0.0" y2="0.0"/><line x1="-0.0" y1="-100.0" x2="-50.0" y2="-13.4"/><line x1="-0.0" y1="-100.0" x2="-86.6" y2="-50.0"/><line x1="100.0" y1="-100.0" x2="186.6" y2="-50.0"/><line x1="100.0" y1="-100.0" x2="100.0" y2="0.0"/><line x1="100.0" y1="-100.0" x2="50.0" y2="-13.4"/><line x1="100.0" y1="-100.0" x2="13.4" y2="-50.0"/><line x1="86.6" y1="-50.0" x2="186.6" y2="-50.0"/><line x1="86.6" y1="-50.0" x2="86.6" y2="50.0"/><line x1="86.6" y1="-50.0" x2="36.6" y2="36.6"/><line x1="86.6" y1="-50.0" x2="-0.0" y2="-0.0"/><line x1="186.6" y1="-50.0" x2="186.6" y2="50.0"/><line x1="186.6" y1="-50.0" x2="136.6" y2="36.6"/><line x1="186.6" y1="-50.0" x2="100.0" y2="-0.0"/><line x1="-50.0" y1="-86.6" x2="50.0" y2="-86.6"/><line x1="-50.0" y1="-86.6" x2="36.6" y2="-36.6"/><line x1="-50.0" y1="-86.6" x2="-0.0" y2="0.0"/><line x1="-50.0" y1="-86.6" x2="-100.0" y2="0.0"/><line x1="-50.0" y1="-86.6" x2="-136.6" y2="-36.6"/><line x1="50.0" y1="-86.6" x2="136.6" y2="-36.6"/><line x1="50.0" y1="-86.6" x2="100.0" y2="0.0"/><line x1="50.0" y1="-86.6" x2="0.0" y2="0.0"/><line x1="50.0" y1="-86.6" x2="-36.6" y2="-36.6"/><line x1="36.6" y1="-36.6" x2="136.6" y2="-36.6"/><line x1="36.6" y1="-36.6" x2="86.6" y2="50.0"/><line x1="36.6" y1="-36.6" x2="-13.4" y2="50.0"/><line x1="36.6" y1="-36.6" x2="-50.0" y2="13.4"/><line x1="136.6" y1="-36.6" x2="186.6" y2="50.0"/><line x1="136.6" y1="-36.6" x2="86.6" y2="50.0"/><line x1="136.6" y1="-36.6" x2="50.0" y2="13.4"/><line x1="-0.0" y1="0.0" x2="100.0" y2="0.0"/><line x1="-0.0" y1="0.0" x2="86.6" y2="50.0"/><line x1="-0.0" y1="0.0" x2="-50.0" y2="86.6"/><line x1="-0.0" y1="0.0" x2="-86.6" y2="50.0"/><line x1="100.0" y1="0.0" x2="186.6" y2="50.0"/><line x1="100.0" y1="0.0" x2="50.0" y2="86.6"/><line x1="100.0" y1="0.0" x2="13.4" y2="50.0"/><line x1="86.6" y1="50.0" x2="186.6" y2="50.0"/><line x1="86.6" y1="50.0" x2="36.6" y2="136.6"/><line x1="86.6" y1="50.0" x2="-0.0" y2="100.0"/><line x1="186.6" y1="50.0" x2="136.6" y2="136.6"/><line x1="186.6" y1="50.0" x2="100.0" y2="100.0"/><line x1="-100.0" y1="-100.0" x2="0.0" y2="-100.0"/><line x1="-100.0" y1="-100.0" x2="-13.4" y2="-50.0"/><line x1="-100.0" y1="-100.0" x2="-50.0" y2="-13.4"/><line x1="-100.0" y1="-100.0" x2="-100.0" y2="0.0"/><line x1="-100.0" y1="-100.0" x2="-186.6" y2="-50.0"/><line x1="0.0" y1="-100.0" x2="86.6" y2="-50.0"/><line x1="0.0" y1="-100.0" x2="50.0" y2="-13.4"/><line x1="0.0" y1="-100.0" x2="0.0" y2="0.0"/><line x1="0.0" y1="-100.0" x2="-86.6" y2="-50.0"/><line x1="-13.4" y1="-50.0" x2="86.6" y2="-50.0"/><line x1="-13.4" y1="-50.0" x2="36.6" y2="36.6"/><line x1="-13.4" y1="-50.0" x2="-13.4" y2="50.0"/><line x1="-13.4" y1="-50.0" x2="-100.0" y2="0.0"/><line x1="86.6" y1="-50.0" x2="136.6" y2="36.6"/><line x1="86.6" y1="-50.0" x2="86.6" y2="50.0"/><line x1="86.6" y1="-50.0" x2="0.0" y2="0.0"/><line x1="-50.0" y1="-13.4" x2="50.0" y2="-13.4"/><line x1="-50.0" y1="-13.4" x2="36.6" y2="36.6"/><line x1="-50.0" y1="-13.4" x2="-50.0" y2="86.6"/><line x1="-50.0" y1="-13.4" x2="-136.6" y2="36.6"/><line x1="50.0" y1="-13.4" x2="136.6" y2="36.6"/><line x1="50.0" y1="-13.4" x2="50.0" y2="86.6"/><line x1="50.0" y1="-13.4" x2="-36.6" y2="36.6"/><line x1="36.6" y1="36.6" x2="136.6" y2="36.6"/><line x1="36.6" y1="36.6" x2="36.6" y2="136.6"/><line x1="36.6" y1="36.6" x2="-50.0" y2="86.6"/><line x1="136.6" y1="36.6" x2="136.6" y2="136.6"/><line x1="136.6" y1="36.6" x2="50.0" y2="86.6"/><line x1="-100.0" y1="0.0" x2="0.0" y2="0.0"/><line x1="-100.0" y1="0.0" x2="-13.4" y2="50.0"/><line x1="-100.0" y1="0.0" x2="-50.0" y2="86.6"/><line x1="-100.0" y1="0.0" x2="-186.6" y2="50.0"/><line x1="0.0" y1="0.0" x2="86.6" y2="50.0"/><line x1="0.0" y1="0.0" x2="50.0" y2="86.6"/><line x1="0.0" y1="0.0" x2="-86.6" y2="50.0"/><line x1="-13.4" y1="50.0" x2="86.6" y2="50.0"/><line x1="-13.4" y1="50.0" x2="36.6" y2="136.6"/><line x1="-13.4" y1="50.0" x2="-100.0" y2="100.0"/><line x1="86.6" y1="50.0" x2="136.6" y2="136.6"/><line x1="86.6" y1="50.0" x2="0.0" y2="100.0"/><line x1="-50.0" y1="86.6" x2="50.0" y2="86.6"/><line x1="-50.0" y1="86.6" x2="36.6" y2="136.6"/><line x1="-50.0" y1="86.6" x2="-136.6" y2="136.6"/><line x1="50.0" y1="86.6" x2="136.6" y2="136.6"/><line x1="50.0" y1="86.6" x2="-36.6" y2="136.6"/><line x1="36.6" y1="136.6" x2="136.6" y2="136.6"/><line x1="36.6" y1="136.6" x2="-50.0" y2="186.6"/><line x1="136.6" y1="136.6" x2="50.0" y2="186.6"/><line x1="-136.6" y1="-136.6" x2="-36.6" y2="-136.6"/><line x1="-136.6" y1="-136.6" x2="-50.0" y2="-86.6"/><line x1="-136.6" y1="-136.6" x2="-86.6" y2="-50.0"/><line x1="-136.6" y1="-136.6" x2="-136.6" y2="-36.6"/><line x1="-136.6" y1="-136.6" x2="-186.6" y2="-50.0"/><line x1="-36.6" y1="-136.6" x2="50.0" y2="-86.6"/><line x1="-36.6" y1="-136.6" x2="13.4" y2="-50.0"/><line x1="-36.6" y1="-136.6" x2="-36.6" y2="-36.6"/><line x1="-36.6" y1="-136.6" x2="-86.6" y2="-50.0"/><line x1="-50.0" y1="-86.6" x2="50.0" y2="-86.6"/><line x1="-50.0" y1="-86.6" x2="-0.0" y2="-0.0"/><line x1="-50.0" y1="-86.6" x2="-50.0" y2="13.4"/><line x1="-50.0" y1="-86.6" x2="-100.0" y2="0.0"/><line x1="50.0" y1="-86.6" x2="100.0" y2="-0.0"/><line x1="50.0" y1="-86.6" x2="50.0" y2="13.4"/><line x1="50.0" y1="-86.6" x2="0.0" y2="0.0"/><line x1="-86.6" y1="-50.0" x2="13.4" y2="-50.0"/><line x1="-86.6" y1="-50.0" x2="-0.0" y2="-0.0"/><line x1="-86.6" y1="-50.0" x2="-86.6" y2="50.0"/><line x1="-86.6" y1="-50.0" x2="-136.6" y2="36.6"/><line x1="13.4" y1="-50.0" x2="100.0" y2="-0.0"/><line x1="13.4" y1="-50.0" x2="13.4" y2="50.0"/><line x1="13.4" y1="-50.0" x2="-36.6" y2="36.6"/><line x1="-0.0" y1="-0.0" x2="100.0" y2="-0.0"/><line x1="-0.0" y1="-0.0" x2="-0.0" y2="100.0"/><line x1="-0.0" y1="-0.0" x2="-50.0" y2="86.6"/><line x1="100.0" y1="-0.0" x2="100.0" y2="100.0"/><line x1="100.0" y1="-0.0" x2="50.0" y2="86.6"/><line x1="-136.6" y1="-36.6" x2="-36.6" y2="-36.6"/><line x1="-136.6" y1="-36.6" x2="-50.0" y2="13.4"/><line x1="-136.6" y1="-36.6" x2="-86.6" y2="50.0"/><line x1="-136.6" y1="-36.6" x2="-186.6" y2="50.0"/><line x1="-36.6" y1="-36.6" x2="50.0" y2="13.4"/><line x1="-36.6" y1="-36.6" x2="13.4" y2="50.0"/><line x1="-36.6" y1="-36.6" x2="-86.6" y2="50.0"/><line x1="-50.0" y1="13.4" x2="50.0" y2="13.4"/><line x1="-50.0" y1="13.4" x2="-0.0" y2="100.0"/><line x1="-50.0" y1="13.4" x2="-100.0" y2="100.0"/><line x1="50.0" y1="13.4" x2="100.0" y2="100.0"/><line x1="50.0" y1="13.4" x2="0.0" y2="100.0"/><line x1="-86.6" y1="50.0" x2="13.4" y2="50.0"/><line x1="-86.6" y1="50.0" x2="-0.0" y2="100.0"/><line x1="-86.6" y1="50.0" x2="-136.6" y2="136.6"/><line x1="13.4" y1="50.0" x2="100.0" y2="100.0"/><line x1="13.4" y1="50.0" x2="-36.6" y2="136.6"/><line x1="-0.0" y1="100.0" x2="100.0" y2="100.0"/><line x1="-0.0" y1="100.0" x2="-50.0" y2="186.6"/><line x1="100.0" y1="100.0" x2="50.0" y2="186.6"/><line x1="-186.6" y1="-50.0" x2="-86.6" y2="-50.0"/><line x1="-186.6" y1="-50.0" x2="-100.0" y2="0.0"/><line x1="-186.6" y1="-50.0" x2="-136.6" y2="36.6"/><line x1="-186.6" y1="-50.0" x2="-186.6" y2="50.0"/><line x1="-86.6" y1="-50.0" x2="0.0" y2="0.0"/><line x1="-86.6" y1="-50.0" x2="-36.6" y2="36.6"/><line x1="-86.6" y1="-50.0" x2="-86.6" y2="50.0"/><line x1="-100.0" y1="0.0" x2="0.0" y2="0.0"/><line x1="-100.0" y1="0.0" x2="-50.0" y2="86.6"/><line x1="-100.0" y1="0.0" x2="-100.0" y2="100.0"/><line x1="0.0" y1="0.0" x2="50.0" y2="86.6"/><line x1="0.0" y1="0.0" x2="0.0" y2="100.0"/><line x1="-136.6" y1="36.6" x2="-36.6" y2="36.6"/><line x1="-136.6" y1="36.6" x2="-50.0" y2="86.6"/><line x1="-136.6" y1="36.6" x2="-136.6" y2="136.6"/><line x1="-36.6" y1="36.6" x2="50.0" y2="86.6"/><line x1="-36.6" y1="36.6" x2="-36.6" y2="136.6"/><line x1="-50.0" y1="86.6" x2="50.0" y2="86.6"/><line x1="-50.0" y1="86.6" x2="-50.0" y2="186.6"/><line x1="50.0" y1="86.6" x2="50.0" y2="186.6"/><line x1="-186.6" y1="50.0" x2="-86.6" y2="50.0"/><line x1="-186.6" y1="50.0" x2="-100.0" y2="100.0"/><line x1="-186.6" y1="50.0" x2="-136.6" y2="136.6"/><line x1="-86.6" y1="50.0" x2="0.0" y2="100.0"/><line x1="-86.6" y1="50.0" x2="-36.6" y2="136.6"/><line x1="-100.0" y1="100.0" x2="0.0" y2="100.0"/><line x1="-100.0" y1="100.0" x2="-50.0" y2="186.6"/><line x1="0.0" y1="100.0" x2="50.0" y2="186.6"/><line x1="-136.6" y1="136.6" x2="-36.6" y2="136.6"/><line x1="-136.6" y1="136.6" x2="-50.0" y2="186.6"/><line x1="-36.6" y1="136.6" x2="50.0" y2="186.6"/><line x1="-50.0" y1="186.6" x2="50.0" y2="186.6"/></svg><header class="wrap head">
+	<p class="dateline">Draft, 25 November 2026</p>
+	<h1>AI labs should stop working on P&nbsp;=&nbsp;NP</h1>
+	<div class="row">
+		<div class="text">
+			<p class="lede">Locks only go one way.</p>
+		</div>
+		<aside class="src"></aside>
+	</div>
+</header></div>
+
+<main class="wrap" id="letter">
+
+<section class="opening">
+	<div class="ledger">
+		<p class="lead">Since July, AI systems have</p>
+		<p class="item"><span class="c">disproved the Jacobian conjecture,</span> <span class="when" data-new>19 July</span></p>
+		<p class="item"><span class="c">broken a post-quantum signature scheme,</span> <span class="when" data-new>28 July</span></p>
+		<p class="item"><span class="c">solved the Navier–Stokes problem,</span> <span class="when" data-new>8 September</span></p>
+		<p class="item"><span class="c">refuted the Exponential Time Hypothesis</span> <span class="when" data-new>16 October</span></p>
+		<p class="item"><span class="c">and proved the Riemann hypothesis</span> <span class="when" data-new>20 November</span></p>
+		<p class="item gone"><span class="c"><del class="pencil" data-new>and found a fast method for the hardest problems in computing</del>.</span> <span class="when mark" data-new><svg class="dele" viewBox="0 -6 46 34" aria-hidden="true"><path d="M2 21 C10 22 19 20 24 13 C29 5 24 -3 16 0 C8 3 10 16 21 20 C30 23 38 18 43 7"/></svg></span></p>
+	</div>
+	<aside class="src notes-under"><p><a href="#s18">Jacobian conjecture</a>, 19 July: false in three dimensions and above.</p>
+			<p><a href="#s1">HAWK</a>, 28 July: the cost of recovering a HAWK-512 key fell from 2<sup>150</sup> to 2<sup>108</sup>. Its designers withdrew it from NIST's third round the next day.</p>
+			<p><a href="#s19">Navier–Stokes</a>, 8 September: blow-up in finite time with smooth forcing, formalised in Lean.</p>
+			<p><a href="#s2">Exponential Time Hypothesis</a>, 16 October: formalised in Lean.</p>
+			<p><a href="#s3">Riemann hypothesis</a>, 20 November: formalised in Lean.</p></aside>
+</section>
+
+<section>
+	<h2>If P&nbsp;=&nbsp;NP</h2>
+	<div class="row">
+		<div class="text">
+			<p>P versus NP asks whether every problem whose answer is quick to check is also quick to solve. <strong>Nearly all of modern security assumes it is not.</strong> A password, a private key, the signature on a software update: each is an answer that is quick to check and, we trust, hopeless to find.</p>
+			<p>If P&nbsp;=&nbsp;NP, whoever holds the method can:</p>
+			<ul class="worst">
+				<li><strong>Read</strong> almost any encrypted message.</li>
+				<li><strong>Recover the private key</strong> of any bank, any government and any person.</li>
+				<li><strong>Forge the signature</strong> on a software update and remotely execute code on any device that accepts updates.</li>
+				<li><strong>Do all of it covertly</strong>, because nothing has been broken into.</li>
+			</ul>
+			<p><strong>There is no patch.</strong> The new standards built to survive quantum computers are just as vulnerable. Almost nothing is left standing but codes whose secret is as long as the message.</p>
+		</div>
+		<aside class="src">
+			<p>An algorithm solving 3-SAT in <i>n</i>² steps "could be used to factor 200-digit numbers in a few minutes." <a href="#s6">Cook</a></p>
+			<p>"Essentially all the cryptography that we currently use on the Internet" would be broken, the exceptions being "the one-time pad and quantum key distribution". <a href="#s5">Aaronson</a></p>
+		</aside>
+	</div>
+</section>
+
+<section>
+	<h2>October was the warning shot</h2>
+	<div class="row">
+		<div class="text">
+			<p>The Exponential Time Hypothesis once claimed that the hardest problems are not merely slow to solve, but exponentially slow. If true, P&nbsp;≠&nbsp;NP follows. Hundreds of papers were built on it. <strong>One month ago it was proven false.</strong> Two labs' AI systems did it, with a method far too slow to use.</p>
+			<p>A proof that P&nbsp;=&nbsp;NP could be just as slow and still be the dangerous one. <strong>A proof is all it takes</strong> to start what follows:</p>
+		</div>
+		<aside class="src"><p>Too slow: by <a href="#s2">one analysis</a> its advantage begins near 2<sup>8.6 × 10<sup>9</sup></sup> variables.</p></aside>
+	</div>
+	<figure class="path" id="fig1">
+		<div class="steps">
+		<div class="step"><h3>A proof that P&nbsp;=&nbsp;NP</h3><p>No need for an efficient algorithm.</p></div>
+		<div class="step"><h3>A method exists at once</h3><p>Any such proof means a known, explicit method already finds a key, or any other answer that can be checked, in polynomial time, though with constants so large it is useless.</p></div>
+		<div class="step"><h3>The hunt begins</h3><p>Everyone now knows a fast method may exist, and the systems that found the proof are pointed at finding it.</p></div>
+		<div class="step"><h3>A practical method</h3><p>Held by whoever found it first.</p></div>
+	</div>
+		<figcaption><span data-new>Figure 1. </span>How it would unfold<span data-new>.</span></figcaption>
+	</figure>
+	<div class="row">
+		<div class="text">
+			<p><strong>Only the first step is a choice.</strong> After it, everyone knows a fast method is there to be found, and nobody decides who goes looking.</p>
+		</div>
+		<aside class="src">
+			<p>"Once we knew that an algorithm existed, we'd have a massive inducement to try to find it." <a href="#s5">Aaronson</a></p>
+		</aside>
+	</div>
+</section>
+
+<section>
+	<h2>Warning people first doesn't help</h2>
+	<div class="row">
+		<div class="text">
+			<p>When researchers break cryptographic ciphers, they disclose privately to mitigate the damage. That works because there is another cipher to move to.</p>
+			<p><strong>There is no other cipher.</strong> A warning cannot help when nothing can be changed. It does nothing for traffic already recorded: adversaries collect encrypted data now in the hope of reading it later.</p>
+			<p>So for this one kind of result, <strong>how it is announced matters less than when it is found</strong>. Each year it is not found is a year in which banks, software updates and private messages go on working, and a year in which to settle, before the fact, who should be trusted with such a thing. That is what stopping buys.</p>
+		</div>
+		<aside class="src">
+			<p>The SIKE break of 2022 reached its designers about a week before the paper, on 22 and 30 July. <a href="#s8">Source</a></p>
+			<p>"Harvest now, decrypt later": <a href="#s22">NIST</a> names it as a pressing threat.</p>
+		</aside>
+	</div>
+</section>
+
+<section>
+	<h2>What we ask</h2>
+	<p class="display" id="ask"><span class="stmt">AI labs should not work on P versus NP.</span> <span class="eqno">(1)</span></p>
+	<div class="row">
+		<div class="text">
+			<p>Frontier labs are the ones solving problems like this. They have the compute and the internal models, and nobody else settled a problem of this size this year. So the ask is made of them: <strong>do not aim those systems at P versus NP.</strong></p>
+			<p>That means not at proving P&nbsp;=&nbsp;NP, and not at proving P&nbsp;≠&nbsp;NP. Nobody can aim a system at one answer. <strong>A campaign to settle the question returns whichever answer is true.</strong></p>
+			<p>Each lab should say so in the safety framework it already publishes: for the next two years, <strong>no campaigns to resolve P versus NP, and none to speed up algorithms for NP-complete problems</strong>, beginning with October's. The commitment holds while everyone keeps it. If any developer is found running such a campaign, the others are released.</p>
+			<p><strong>The trade is lopsided.</strong> If P&nbsp;≠&nbsp;NP, as most experts expect, a lab gives up a famous result and nothing else. If P&nbsp;=&nbsp;NP, <strong>the lab that finds it first has won nothing</strong>: the method opens its own side's locks as surely as anyone else's, and there is no patch to build from it.</p>
+			<p><strong>If a proof turns up anyway, do not announce it, and do not work on making it fast.</strong> The time that buys is for moving what matters most onto keys that depend on no hard problem at all.</p>
+			<p>This is asked of a few companies and their systems. People have worked on this problem since at least 1971, and <strong>nothing here asks them to stop</strong>.</p>
+		</div>
+		<aside class="src">
+			<p>We read the published safety frameworks of five labs: Anthropic, OpenAI, Google DeepMind, Meta and xAI. None names a mathematical result as something to hold back. Nor does the <a href="#s13">Frontier Model Forum's 2026 survey</a>.</p>
+			<p>One lab has written that "it would be prudent to consider how researchers should react if a language model were to discover vulnerabilities in cryptosystems where attacks do have an immediate real-world impact." <a href="#s1">Source</a></p>
+		</aside>
+	</div>
+</section>
+
+<section class="replies">
+	<div class="row">
+		<div class="text">
+			<h3 class="q">But wouldn't P&nbsp;=&nbsp;NP do a great deal of good?</h3>
+			<p>Yes. A practical method would find the best answer to almost any question whose answers can be checked, a proof or a schedule as readily as a key. But the most powerful instrument ever made would arrive on one day, in one company's hands, and on the same day everyone else would lose the means to keep a secret or to trust a message. <strong>The good would take years to build. The harm would be ready that afternoon.</strong></p>
+		</div>
+		<aside class="src">
+			<p>It "will make the whole internet look like a footnote in history." <a href="#s7">Fortnow</a></p>
+		</aside>
+	</div>
+	<div class="row">
+		<div class="text">
+			<h3 class="q">Isn't publishing how the field works?</h3>
+			<p>It is, and it was hard won. In the late 1970s cryptographers were warned that publishing might bring prosecution, and a law to restrict their research was drafted, before a voluntary review was agreed. <strong>Nothing here is asked of the field.</strong> A few companies are asked not to aim a new kind of instrument at one place.</p>
+		</div>
+		<aside class="src">
+			<p>The 1977 letter, the draft bill and the review: <a href="#s9">Corrigan-Gibbs</a>.</p>
+		</aside>
+	</div>
+	<div class="row">
+		<div class="text">
+			<h3 class="q">If the labs stop, won't a rival get there first?</h3>
+			<p>Not yet, because the hardest results of this year needed what only the labs have. The Navier–Stokes proof took ten thousand agents running for 88 hours, at a cost put at six to ten million dollars for the proof alone and fifteen to twenty for the whole effort. Any state has that money. What no state has is the model it ran on, which the public cannot use. The Exponential Time Hypothesis fell to internal research models at two labs. The Riemann hypothesis fell inside a lab, to one of its own mathematicians working with its model.</p>
+			<p><strong>So the labs would not be answering a race. They would be starting one.</strong></p>
+				<p><strong>And getting there first wins nothing.</strong> The method reads other people's secrets and cannot guard your own. Whoever holds it is exactly as exposed as everyone else on the day a second party has it, and it is a few pages of mathematics.</p>
+				<p>That is why the commitment is conditional. If anyone is found running such a campaign, everyone is released, and the labs that held back are the ones with the systems to finish first. <strong>Whoever starts that race brings the strongest runners into it, and loses their own locks at the end of it.</strong></p>
+		</div>
+		<aside class="src">
+			<p>"An advanced model not available to the public": <a href="#s19">Quanta</a>. The cost is <a href="#s23">NPR's estimate</a> from the lab's public prices.</p>
+			<p>"Discovered by an internal research Claude model": <a href="#s2">the preprint</a>.</p>
+			<p>"A mathematician at the … company": <a href="#s3">Nature</a>.</p>
+			<p>"If you can find an algorithm so can others." <a href="#s10">Fortnow, 2014</a></p>
+		</aside>
+	</div>
+	<div class="row">
+		<div class="text">
+			<h3 class="q">Why not prove it, and simply refrain from making it fast?</h3>
+			<p><strong>Because a proof cannot be kept.</strong> It would leak, or be found again, and it cannot be un-known.</p>
+			<p>From that day everyone with the means would have every reason to build the fast method first, and every reason to fear that someone else already had. No promise to leave it alone survives that. <strong>The only point at which stopping holds is before the proof.</strong></p>
+		</div>
+		<aside class="src"></aside>
+	</div>
+</section>
+
+<section>
+	<h2>Mathematics kept back has been found again</h2>
+	<div class="row">
+		<div class="text">
+			<p>In the two best-documented cases, a piece of mathematics that mattered to cryptography was held inside a closed group. Both times the secret held, and <strong>both times outsiders found the same thing by themselves</strong>.</p>
+		</div>
+		<aside class="src">
+			<p><a href="#s20">Ellis's own history</a> on GCHQ; <a href="#s24">Merkle's account</a> of his 1974 proposal; <a href="#s15">Coppersmith, 1994</a> on IBM.</p>
+		</aside>
+	</div>
+	<figure class="timeline" id="fig3">
+		<div class="axis"><span style="--at:1970" data-new>1970</span><span style="--at:1975" data-new>1975</span><span style="--at:1980" data-new>1980</span><span style="--at:1985" data-new>1985</span><span style="--at:1990" data-new>1990</span></div>
+		<div class="bar" style="--from:1970;--to:1976"><span class="what">Public-key cryptography, found at GCHQ</span><span class="gap">found again in 4 years, published in 6</span></div>
+		<div class="bar" style="--from:1973;--to:1977"><span class="what">The RSA method, found at GCHQ</span><span class="gap">4 years</span></div>
+		<div class="bar" style="--from:1974;--to:1990"><span class="what">Differential cryptanalysis, known at IBM</span><span class="gap">16 years</span></div>
+		<figcaption><span data-new>Figure 2. </span>How long each secret lasted before it was found again<span data-new>.</span></figcaption>
+	</figure>
+	<div class="row">
+		<div class="text">
+			<p><strong>Restraint has held before.</strong> A few people could do the work, they were the ones who asked for it, and the ask was specific: fission papers in 1940, recombinant DNA in 1974, mirror bacteria since 2024. The 1974 pause was tied to a stated condition and a meeting to review it.</p>
+		</div>
+		<aside class="src">
+			<p>In 1940 the physicists' own committee held back fission papers. Its organiser promised to publish them later "with a statement of the original date of the paper". <a href="#s21">Weart, 1976</a>; <a href="#s16">Smyth Report</a></p>
+			<p><a href="#s11">Mirror life, 2024</a>. <a href="#s12">The 2023 pause letter</a>, by its organisers' own account, paused nothing.</p>
+		</aside>
+	</div>
+</section>
+
+
+
+</main>
+
+</div>
+
+<footer class="wrap sources">
+	<h2>Sources</h2>
+	<ol>
+		<li id="s1">Anthropic, "Discovering cryptographic weaknesses", 28 July 2026, <a href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses">anthropic.com</a>; the HAWK team's withdrawal, 29 July 2026, <a href="https://hawk-sign.info/">hawk-sign.info</a> and <a href="https://csrc.nist.gov/projects/pqc-dig-sig/round-3-additional-signatures">NIST</a>.</li>
+		<li id="s2">OpenAI, 26 October 2026, <a href="https://openai.com/index/building-scientific-understanding-with-academic-communities/">openai.com</a>; Anthropic, "A 2^o(n) Time Algorithm for 3-SAT", <a href="https://hexagonmath.org/2610.00577v1">preprint</a>; the published prompt, <a href="https://ethdiscussion.blog/2026/11/12/openai-prompt-that-led-to-the-eth-refutation/">ethdiscussion.blog</a>; TechCrunch, 27 October 2026, <a href="https://techcrunch.com/2026/10/27/frontier-ai-labs-say-their-models-refuted-the-exponential-time-hypothesis-what-does-that-mean/">report</a>; an analysis of where the method begins to pay, <a href="https://arxiv.org/abs/2610.41622">arXiv 2610.41622</a>.</li>
+		<li id="s3">L. Alpöge, "Remark", 20 November 2026, <a href="https://alpo.ge/remark.pdf">alpo.ge</a>; Lean FRO and Mathlib Initiative statement, <a href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/">leanprover-community</a>; A. Sutherland's verification page, <a href="https://math.mit.edu/~drew/grh/">math.mit.edu</a>; Nature, <a href="https://www.nature.com/articles/d41586-026-03812-7">report</a>.</li>
+		<li id="s4">W. Gasarch, "The Third P =? NP Poll", SIGACT News, 2019. <a href="https://www.cs.umd.edu/users/gasarch/papers/poll3.pdf">PDF</a></li>
+		<li id="s5">S. Aaronson, "P =? NP", survey. <a href="https://www.scottaaronson.com/papers/pnp.pdf">PDF</a></li>
+		<li id="s6">S. Cook, "The P versus NP Problem", Clay Mathematics Institute. <a href="https://www.claymath.org/wp-content/uploads/2022/06/pvsnp.pdf">PDF</a></li>
+		<li id="s7">L. Fortnow, "The Status of the P versus NP Problem", Communications of the ACM, 2009. <a href="https://lance.fortnow.com/papers/files/pnp-cacm.pdf">PDF</a></li>
+		<li id="s8">Castryck and Decru on SIDH, <a href="https://eprint.iacr.org/2022/975">ePrint 2022/975</a>, received 30 July 2022; Microsoft's SIKE challenge page, which records the prize claimed on 22 July 2022, <a href="https://www.microsoft.com/en-us/msrc/sike-cryptographic-challenge">microsoft.com</a>.</li>
+		<li id="s9">H. Corrigan-Gibbs, "Keeping Secrets", Stanford Magazine, 2014. <a href="https://stanfordmag.org/contents/keeping-secrets">stanfordmag.org</a></li>
+		<li id="s10">L. Fortnow, "Should you reveal a P&nbsp;=&nbsp;NP algorithm?", 2014. <a href="https://blog.computationalcomplexity.org/2014/04/should-you-reveal-p-np-algorithm.html">blog</a></li>
+		<li id="s11">"Confronting risks of mirror life", Science, December 2024; summary at <a href="https://www.jcvi.org/research/risks-mirror-bacteria">jcvi.org</a>.</li>
+		<li id="s12">Future of Life Institute, newsletter, 1 October 2023: "a pause never materialized". <a href="https://newsletter.futureoflife.org/p/fli-newsletter-september-2023">futureoflife.org</a></li>
+		<li id="s13">Frontier Model Forum, "Managing Advanced Cyber Risks in Frontier AI Frameworks", February 2026. <a href="https://www.frontiermodelforum.org/uploads/2026/02/FMF-Technical-Report_-Managing-Advanced-Cyber-Risks-in-Frontier-AI-Frameworks.pdf">PDF</a></li>
+		<li id="s15">D. Coppersmith, "The Data Encryption Standard (DES) and its strength against attacks", IBM Journal of Research and Development, 1994. <a href="https://people.clarkson.edu/class/cs456/CoppersmithDES.pdf">PDF</a></li>
+		<li id="s16">H. D. Smyth, "Atomic Energy for Military Purposes", 1945, chapter III. <a href="https://www.atomicarchive.com/resources/documents/smyth-report/smyth_iii.html">atomicarchive.com</a></li>
+		<li id="s18">The Jacobian conjecture, July 2026: counterexamples in every dimension above two, <a href="https://arxiv.org/pdf/2608.00222">arXiv 2608.00222</a>; the lab's own statement that its model resolved it is in the first source above.</li>
+		<li id="s19">Navier–Stokes, September 2026: OpenAI, <a href="https://openai.com/index/navier-stokes-solution">announcement</a> and <a href="https://github.com/openai/NavierStokesAndEuler">Lean formalisation</a>; Quanta Magazine, <a href="https://quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908">report</a>.</li>
+		<li id="s20">J. H. Ellis, "The history of Non-Secret Encryption", CESG. <a href="https://www.cryptocellar.org/cesg/ellis.pdf">PDF</a></li>
+		<li id="s21">S. Weart, "Scientists with a secret", Physics Today, February 1976. <a href="https://aip.brightspotcdn.com/PTO.v29.i2.23_1.online.pdf">PDF</a></li>
+		<li id="s22">NIST IR 8547, "Transition to Post-Quantum Cryptography Standards", October 2026. <a href="https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8547.pdf">PDF</a></li>
+		<li id="s23">NPR, "AI solved one of math's hardest problems. Humanity learned nothing (so far)", 22 September 2026. <a href="https://www.npr.org/2026/09/22/nx-s1-5968588/openai-navier-stokes-problem-mathematicians-learn-little">npr.org</a></li>
+		<li id="s24">R. Merkle, on his 1974 proposal for what became public-key cryptography. <a href="https://www.ralphmerkle.com/1974/">ralphmerkle.com</a></li>
+	</ol>
+</footer>
+</body>
+</html>
